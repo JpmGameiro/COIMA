@@ -1,0 +1,36 @@
+{
+  "res": {
+    "statusCode": 200
+  },
+  "body": {
+    "_id": "28",
+    "_rev": "3-b084bf9b6177ad1c45ec88274ae9ce38",
+    "comments": [
+      {
+        "id": "Sk7KFcr7M",
+        "movieName": "Apocalypse Now",
+        "movieId": "28",
+        "author": "gameiro",
+        "text": "awesome",
+        "replies": [
+          {
+            "id": "r1UtUrI7M",
+            "movieName": "Apocalypse Now",
+            "movieId": "28",
+            "author": "zeviot",
+            "text": "yep",
+            "replies": []
+          }
+        ]
+      },
+      {
+        "id": "HkeTFqHQz",
+        "movieName": "Apocalypse Now",
+        "movieId": "28",
+        "author": "nunobpinto",
+        "text": "great war movie",
+        "replies": []
+      }
+    ]
+  }
+}

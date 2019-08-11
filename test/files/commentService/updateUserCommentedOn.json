@@ -1,0 +1,10 @@
+{
+  "resp": {
+    "statusCode": 200
+  },
+  "body": {
+    "ok": true,
+    "id": "bruno",
+    "rev": "1-4b9513fef19adedf553b4dc7a6b30108"
+  }
+}

@@ -1,0 +1,327 @@
+#themeTitle {
+    color: orange;
+    padding-top: 2rem;
+}
+
+#themeColor {
+    color: orange;
+}
+
+#aCoima {
+    color: black;
+    text-decoration: none;
+}
+
+#homeBtn {
+    font-size: 30px;
+    margin-right: 1.5rem;
+    color: orange
+}
+
+#divnavBar {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#divJumboTron {
+    padding-top: 0;
+}
+
+#divCard {
+    width: 15rem;
+    margin-right: auto;
+    margin-left: auto
+}
+
+#divColmax-width {
+    max-width: fit-content
+}
+
+#pfont-size {
+    font-size: xx-large;
+    padding-top: 0;
+}
+
+#imgWidth {
+    width: 350px
+}
+
+#starWidth {
+    width: 30px
+}
+
+#movieTitlepadding {
+    padding-left: 0;
+}
+
+#pFilmography {
+    margin-left: 1.75rem;
+    margin-top: 5rem;
+    margin-bottom: 5px;
+    font-size: xx-large;
+}
+
+#pCast {
+    margin-top: 5rem;
+    margin-bottom: 20px;
+    margin-left: 1.75rem;
+    font-size: xx-large;
+}
+
+#marginPagination {
+    display: inline-flex;
+}
+
+#alignContentContainer {
+    text-align: center;
+}
+
+#mBottomList {
+    margin-bottom: 2rem;
+}
+
+#txtAlignCenter {
+    text-align: center
+}
+
+#btnCreateList {
+    text-align: center;
+    margin-top: 20px
+}
+
+#marginLeft {
+    margin-left: auto
+}
+
+#buttonAddList {
+    margin-left: auto;
+    display: table;
+}
+
+#marginTop {
+    margin-top: 2rem
+}
+
+#userjbtron {
+    padding-top: 0;
+}
+
+#cardUserListswidth {
+    width: 10rem;
+}
+
+#listsHeader {
+    align-items: baseline;
+    padding-bottom: 30px
+}
+
+#listItem {
+    margin-bottom: 2rem;
+}
+
+#fontSize {
+    font-size: 50px
+}
+
+#crtLsts {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#checkmark {
+    width: 20px;
+}
+
+.card-title:hover {
+    text-decoration: none;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+.addToList {
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: 20px;
+}
+
+.addToList:hover {
+    color: orange;
+}
+
+.removeToList {
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: 20px;
+}
+
+.removeToList:hover {
+    color: orange;
+}
+
+.removeListBtn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    color: white;
+    overflow: hidden;
+    outline: none;
+}
+
+.removeListBtn:hover {
+    color: orange;
+}
+
+.inviteUser {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    color: white;
+    overflow: hidden;
+    outline: none;
+}
+
+.inviteUser:hover {
+    color: orange;
+}
+
+.editListBtn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    color: white;
+    overflow: hidden;
+    outline: none;
+}
+
+.editListBtn:hover {
+    color: orange;
+}
+
+.removeMovieBtn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    color: black;
+    overflow: hidden;
+    outline: none;
+}
+
+.removeMovieBtn:hover {
+    color: orange;
+}
+
+/* Style the tab */
+.tab-list {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 500px;
+    margin-top: 1rem;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab-list__tab-btn {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab-list button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab-list button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab-list button.active {
+    background-color: #ccc;
+}
+
+.tab-content--hide {
+    display: none;
+}
+
+.tab-content--highlight {
+    display: block;
+}
+
+.comment-area__comments-container {
+    margin: 10px auto
+}
+
+.comment-area {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 3rem;
+}
+
+.comment-area__user-alert {
+    text-align: center;
+}
+
+.comment-form {
+    width: 500px;
+    margin-left: 10px;
+}
+
+.comment-form__comment-text {
+    margin-bottom: 5px;
+}
+
+.comment-form__comment-submit {
+
+}
+
+.nested-comments {
+
+}
+
+.nested-comments__comment-chain {
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 8px;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+.nested-comments__comment-chain__comment {
+    padding: 1em;
+}
+
+ul, li {
+    padding-left: 0;
+    list-style: none;
+}

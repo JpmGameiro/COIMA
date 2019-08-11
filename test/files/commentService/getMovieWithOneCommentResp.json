@@ -1,0 +1,19 @@
+{
+  "res": {
+    "statusCode": 200
+  },
+  "body": {
+    "_id": "324786",
+    "_rev": "3-b084bf9b6177ad1c45ec88274ae9ce38",
+    "comments": [
+       {
+           "id": "BJy6bdLXM",
+           "movieName": "Hacksaw Ridge",
+           "movieId": "324786",
+           "author": "zeviot",
+           "text": "wow",
+           "replies": []
+       }
+    ]
+  }
+}

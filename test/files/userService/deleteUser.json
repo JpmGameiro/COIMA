@@ -1,0 +1,10 @@
+{
+  "res": {
+    "statusCode": 200
+  },
+  "body": {
+    "ok": true,
+    "id": "zemanel",
+    "_rev": 123124
+  }
+}

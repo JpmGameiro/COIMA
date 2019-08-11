@@ -1,0 +1,55 @@
+{{>navbar}}
+
+<div class="container pt-3">
+    <div class="row">
+        <div id="divColmax-width" class="col">
+            {{#if portrait}}
+                <img id="imgWidth" src='http://image.tmdb.org/t/p/w185/{{portrait}}'/>
+            {{else}}
+                <img id="imgWidth" src='/images/defaultAvatar.jpg'/>
+            {{/if}}
+        </div>
+        <div class="col">
+            <p id="pfont-size" class="lead"><strong>{{name}}</strong></p>
+            <p><em>{{biography}}</em></p>
+            <p class="lead"><strong>Born: </strong>{{birthday}}</p>
+            {{#if deathday}}
+                <p class="lead"><strong>Died: </strong>{{deathday}}</p>
+            {{/if}}
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container pt-4">
+    <div class="row">
+        <p id="pFilmography" class="lead"><strong>Filmography:</strong></p>
+    </div>
+    <hr>
+    <div class="row">
+        {{#each filmography}}
+            <div class="col-3">
+                <div id="divCard" class="card mb-2 text-center">
+                    <a href="/movies/{{id}}">
+                        {{#if poster}}
+                            <img class="card-img-top" src='http://image.tmdb.org/t/p/w185/{{poster}}'>
+                        {{else}}
+                            <img class="card-img-top"
+                                 src='/images/defaultPoster.jpg'>
+                        {{/if}}
+                    </a>
+                    <div class="card-body">
+                        <a href="/movies/{{id}}">
+                            <h4 class="card-title">{{title}}</h4>
+                        </a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Vote Average: {{voteAverage}}</li>
+                        <li class="list-group-item">Release Date: {{releaseDate}}</li>
+                    </ul>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

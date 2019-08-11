@@ -1,0 +1,32 @@
+<div id="divnavBar" class="container">
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div id="marginLeft">
+            {{#if user}}
+                <a class="btn btn-outline-warning" href="/users/{{user.username}}" role="button">{{user.username}}</a>
+                <a class="btn btn-outline-warning" href="/auth/signout" role="button">Sign out</a>
+            {{else}}
+                <a class="btn btn-outline-warning" href="/auth/signin" role="button">Sign in</a>
+                <a class="btn btn-outline-warning" href="/auth/register" role="button">Register</a>
+            {{/if}}
+        </div>
+    </nav>
+</div>
+<div id="divJumboTron" class="jumbotron jumbotron-fluid bg-dark">
+    <div class="container">
+        <h1 id="themeTitle" class="display-3"><span class="fa fa-film"></span>COIMA</h1>
+        <p id="themeColor" class="lead">This is where you can search for your favorite movies and see the details of various actors. </p>
+    </div>
+</div>
+<div class="container">
+    <form method="get" action="/movies/search">
+        <div class="row">
+            <div class="col">
+                <div class="input-group">
+                    <input name="name" type="text" class="form-control" placeholder="Insert Movie Name..." required>
+                    <input name="page" type="hidden" value="1">
+                    <button class="btn btn-outline-warning" type="submit">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,66 @@
+{{>navbar}}
+{{#if results}}
+    <div id="alignContentContainer" class="container pt-5">
+        <div id="mBottomList" class="row">
+            {{#each results}}
+                <div class="col-lg-3">
+                    <div id="divCard" class="card mb-2 text-center">
+                        <a href="/movies/{{id}}">
+                            {{#if poster}}
+                                <img class="card-img-top" src='http://image.tmdb.org/t/p/w185/{{poster}}'>
+                            {{else}}
+                                <img class="card-img-top" src='/images/defaultPoster.jpg'>
+                            {{/if}}
+                        </a>
+                        <div class="card-body">
+                            <a href="/movies/{{id}}">
+                                <h4 class="card-title">{{title}}</h4>
+                            </a>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Vote Average: {{voteAverage}}</li>
+                            <li class="list-group-item">Release Date: {{releaseDate}}</li>
+                        </ul>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+
+        {{#paginate query currentPage totalPages 3 }}
+            <div id="marginPagination" class="pagination">
+                {{#if isFirstPage}}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="/movies/search?name={{name}}&page=1">First</a>
+                    </li>
+                {{else}}
+                    <li class="page-item">
+                        <a class="page-link" href="/movies/search?name={{name}}&page=1">First</a>
+                    </li>
+                {{/if}}
+                {{#each pages}}
+                    {{#if isCurrent}}
+                        <li class="page-item active">
+                            <a class="page-link" href="/movies/search?name={{../name}}&page={{page}}">{{page}}</a>
+                        </li>
+                    {{else}}
+                        <li class="page-item">
+                            <a class="page-link" href="/movies/search?name={{../name}}&page={{page}}">{{page}}</a>
+                        </li>
+                    {{/if}}
+                {{/each}}
+
+                {{#if isLastPage}}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="/movies/search?name={{name}}&page={{lastPage}}">Last</a>
+                    </li>
+                {{else}}
+                    <li class="page-item">
+                        <a class="page-link" href="/movies/search?name={{name}}&page={{lastPage}}">Last</a>
+                    </li>
+                {{/if}}
+            </div>
+        {{/paginate}}
+    </div>
+{{else}}
+    <h1 id="txtAlignCenter" class="display-6">No results found for: "{{query}}"</h1>
+{{/if}}

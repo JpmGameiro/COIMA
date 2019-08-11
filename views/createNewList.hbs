@@ -1,0 +1,24 @@
+<div id="marginTop" class="container">
+    <h1 id="txtAlignCenter" class="display-2"><span class="fa fa-film"></span>COIMA</h1>
+    <h1 id="txtAlignCenter" class="lead">Create New List</h1>
+    <form method="post" action="/users/{{user.username}}/lists/new" id="listform">
+        <div class="form-group">
+            <label class="lead">List Name:</label>
+            <input type="text" name="name" class="form-control" required/>
+        </div>
+        <div>
+            <label class="lead">List Protection:</label>
+            <form>
+                <label class="radio-inline"><input type="radio" name="option" value="public" checked>Public</label>
+                <label class="radio-inline"><input type="radio" name="option" value="private">Private</label>
+            </form>
+        </div>
+        <label class="lead">Description:</label>
+    </form>
+    <div>
+        <textarea class="form-control" rows="4" cols="65" name="description" form="listform" placeholder="Enter description here..."></textarea>
+    </div>
+    <div id="btnCreateList" class="form-group">
+        <button class="btn btn-outline-warning" type="submit" form="listform">Create List</button>
+    </div>
+</div>

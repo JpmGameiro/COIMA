@@ -1,0 +1,36 @@
+{
+  "res": {
+    "statusCode": 200
+  },
+  "body": {
+    "_id": "28",
+    "_rev": "3-b084bf9b6177ad1c45ec88274ae9ce38",
+    "comments": [
+      {
+        "id": "B1ttc5SXf",
+        "movieName": "Gladiator",
+        "movieId": "98",
+        "author": "nunobpinto",
+        "text": "great drama",
+        "replies": [
+          {
+            "id": "ByF15qrQM",
+            "movieName": "Gladiator",
+            "movieId": "98",
+            "author": "gameiro",
+            "text": "agreed",
+            "replies": []
+          }
+        ]
+      },
+      {
+        "id": "B1tt5qrQM",
+        "movieName": "Gladiator",
+        "movieId": "98",
+        "author": "bruno",
+        "text": "disappointed",
+        "replies": []
+      }
+    ]
+  }
+}

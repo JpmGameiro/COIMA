@@ -1,0 +1,22 @@
+{{>navbar}}
+
+<div id="userjbtron" class="jumbotron jumbotron-fluid bg-dark" xmlns="http://www.w3.org/1999/html">
+    <div class="container">
+        <h1 id="themeTitle" class="display-3"><span class="fa fa-user-circle"></span>{{user.username}}'s comments</h1>
+    </div>
+</div>
+
+<div class="comment-area">
+    <div class="comment-area__comments-container">
+        <ul class="nested-comments">
+            {{#each comments}}
+                <li class="nested-comments__comment-chain">
+                    <div class="nested-comments__comment-chain__comment">
+                        <p>{{text}}</p>
+                        <em>Commented on <a href="/movies/{{movieId}}">{{movieName}}</a></em>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

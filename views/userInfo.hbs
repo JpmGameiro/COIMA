@@ -1,0 +1,29 @@
+{{>navbar}}
+
+<div id="userjbtron" class="jumbotron jumbotron-fluid bg-dark">
+    <div class="container">
+        <h1 id="themeTitle" class="display-3"><span class="fa fa-user-circle"></span>{{user.fullName}}
+            <span id="fontSize">
+                ({{user.username}})
+            </span>
+        </h1>
+        <p id="themeColor" class="lead">{{user.email}}</p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div id="crtLsts">
+        <a class="btn btn-outline-dark" href="/users/public/lists?page=1">Public Lists</a>
+    </div>
+</div>
+<div class="row">
+    <div id="crtLsts">
+        <a class="btn btn-outline-dark" href="/users/{{user.username}}/lists?page=1">My Lists</a>
+    </div>
+</div>
+<div class="row">
+    <div id="crtLsts">
+        <a class="btn btn-outline-dark" href="/users/{{user.username}}/comments">My Comments</a>
+    </div>
+</div>

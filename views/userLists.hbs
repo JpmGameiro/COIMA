@@ -1,0 +1,100 @@
+{{>navbar}}
+
+{{#if public}}
+    <div id="userjbtron" class="jumbotron jumbotron-fluid bg-dark" xmlns="http://www.w3.org/1999/html">
+        <div class="container">
+            <h1 id="themeTitle" class="display-3"><span class="fa fa-user-circle"></span>Public Lists</h1>
+        </div>
+    </div>
+{{else}}
+    <div id="userjbtron" class="jumbotron jumbotron-fluid bg-dark" xmlns="http://www.w3.org/1999/html">
+        <div class="container">
+            <h1 id="themeTitle" class="display-3"><span class="fa fa-user-circle"></span>{{user.username}}'s Lists</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div id="crtLsts">
+            <a class="btn btn-outline-dark" href="/users/{{user.username}}/lists/new">Create New List</a>
+        </div>
+    </div>
+{{/if}}
+
+<div id="alignContentContainer" class="container pt-5">
+    <div id="mainDiv" class="row">
+        {{#each lists}}
+            {{>cardMovieList username=../user.username}}
+        {{/each}}
+    </div>
+{{#if public}}
+    {{#paginate user.username currentPage totalPages 3 }}
+        <div id="marginPagination" class="pagination">
+            {{#if isFirstPage}}
+                <li class="page-item disabled">
+                    <a class="page-link" href="/users/public/lists?page=1">First</a>
+                </li>
+            {{else}}
+                <li class="page-item">
+                    <a class="page-link" href="/users/public/lists?page=1">First</a>
+                </li>
+            {{/if}}
+            {{#each pages}}
+                {{#if isCurrent}}
+                    <li class="page-item active">
+                        <a class="page-link" href="/users/public/lists?page={{page}}">{{page}}</a>
+                    </li>
+                {{else}}
+                    <li class="page-item">
+                        <a class="page-link" href="/users/public/lists?page={{page}}">{{page}}</a>
+                    </li>
+                {{/if}}
+            {{/each}}
+
+            {{#if isLastPage}}
+                <li class="page-item disabled">
+                    <a class="page-link" href="/users/public/lists?page={{lastPage}}">Last</a>
+                </li>
+            {{else}}
+                <li class="page-item">
+                    <a class="page-link" href="/users/public/lists?page={{lastPage}}">Last</a>
+                </li>
+            {{/if}}
+        </div>
+    {{/paginate}}
+{{else}}
+    {{#paginate user.username currentPage totalPages 3 }}
+        <div id="marginPagination" class="pagination">
+            {{#if isFirstPage}}
+                <li class="page-item disabled">
+                    <a class="page-link" href="/users/{{name}}/lists?page=1">First</a>
+                </li>
+            {{else}}
+                <li class="page-item">
+                    <a class="page-link" href="/users/{{name}}/lists?page=1">First</a>
+                </li>
+            {{/if}}
+            {{#each pages}}
+                {{#if isCurrent}}
+                    <li class="page-item active">
+                        <a class="page-link" href="/users/{{../name}}/lists?page={{page}}">{{page}}</a>
+                    </li>
+                {{else}}
+                    <li class="page-item">
+                        <a class="page-link" href="/users/{{../name}}/lists?page={{page}}">{{page}}</a>
+                    </li>
+                {{/if}}
+            {{/each}}
+
+            {{#if isLastPage}}
+                <li class="page-item disabled">
+                    <a class="page-link" href="/users/{{name}}/lists?page={{lastPage}}">Last</a>
+                </li>
+            {{else}}
+                <li class="page-item">
+                    <a class="page-link" href="/users/{{name}}/lists?page={{lastPage}}">Last</a>
+                </li>
+            {{/if}}
+        </div>
+    {{/paginate}}
+{{/if}}
+</div>
+

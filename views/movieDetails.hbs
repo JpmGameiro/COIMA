@@ -1,0 +1,164 @@
+{{>navbar}}
+<div class="row pt-4 pl-4">
+    <div class="panel col-md-2">
+        {{#if user}}
+            <table class="table" id="txtAlignCenter">
+                <thead>
+                <tr>
+                    <th scope="col">My Lists</th>
+                    <th scope="col">Add/Remove to List</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each lists}}
+                    <tr>
+                        <td><a href="/users/{{../user.username}}/lists/{{id}}">{{listName}}</a></td>
+                        <td>
+                            <div id="mainDiv-{{id}}">
+                                {{#checkIfExists items ../movie.id}}
+                                    {{#if exists}}
+                                        <div id="removeFilm-{{../id}}" class="divRemoveFilm">
+                                            <button onclick="removeMovieFromList('{{../../movie.id}}', '{{../id}}', '{{../../user.username}}')"
+                                                    class="removeToList">-
+                                            </button>
+                                        </div>
+                                    {{else}}
+                                        <div id="addFilm-{{../id}}" class="divAddFavMovie">
+                                            <button onclick="addMovieToList('{{../../movie.id}}', '{{../id}}', '{{../../user.username}}')"
+                                                    class="addToList">+
+                                            </button>
+                                        </div>
+                                    {{/if}}
+                                {{/checkIfExists}}
+                            </div>
+                        </td>
+                {{/each}}
+                </tr>
+                </tbody>
+            </table>
+        {{/if}}
+    </div>
+    <div class="col-xs-9">
+        <div class="container">
+            <div class="row">
+                <div id="divColmax-width" class="col">
+                    {{#if movie.poster}}
+                        <img id="imgWidth" src='http://image.tmdb.org/t/p/w185/{{movie.poster}}'/>
+                    {{else}}
+                        <img id="imgWidth" src='/images/defaultPoster.jpg'/>
+                    {{/if}}
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div id="movieTitlepadding" class="col">
+                            <p id="pfont-size" class="lead"><strong>{{movie.originalTitle}}</strong>
+                                ({{movie.releaseDate}})</p>
+                        </div>
+                        <div id="divColmax-width" class="col">
+                            <img id="starWidth" src='/images/ratingStar.jpg'/>
+                            <p>{{movie.voteAverage}}<sub>/10</sub></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="lead">{{movie.genres}}</p>
+                    </div>
+                    <div class="row">
+                        <p><em>{{movie.overview}}</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tab-list">
+    <button class="tab-list__tab-btn active">Cast</button>
+    <button class="tab-list__tab-btn">Directors</button>
+    <button class="tab-list__tab-btn">Comments</button>
+</div>
+
+<div id="Cast" class="tab-content--highlight">
+    <div class="container mt-5">
+        <div class="row">
+            {{#each movie.cast}}
+                <div class="col-lg-3">
+                    <div id="divCard" class="card mb-2 text-center">
+                        <a href="/actors/{{id}}">
+                            {{#if portrait}}
+                                <img class="card-img-top" src='http://image.tmdb.org/t/p/w185/{{portrait}}'>
+                            {{else}}
+                                <img class="card-img-top"
+                                     src='/images/defaultAvatar.jpg'>
+                            {{/if}}
+                        </a>
+                        <div class="card-body">
+                            <a href="/actors/{{id}}">
+                                <h4 class="card-title">{{name}}</h4>
+                            </a>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Character: {{character}}</li>
+                        </ul>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div id="Directors" class="tab-content--hide">
+    <div class="container mt-5">
+        <div class="row">
+            {{#each movie.directors}}
+                <div class="col">
+                    <div id="divCard" class="card mb-2 text-center">
+                        {{#if portrait}}
+                            <img class="card-img-top" src='http://image.tmdb.org/t/p/w185/{{portrait}}'/>
+                        {{else}}
+                            <img class="card-img-top"
+                                 src='/images/defaultAvatar.jpg'>
+                        {{/if }}
+                        <div class="card-body">
+                            <h4 class="card-title">{{name}}</h4>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div id="Comments" class="tab-content--hide">
+    <div class="comment-area">
+        {{#if user}}
+            <form class="comment-form" method="post" id="commentform">
+                <div class="comment-form__comment-text">
+                        <textarea class="form-control" rows="4" cols="65" name="comment"
+                                  placeholder="Write something..."
+                                  form="commentform" required></textarea>
+                </div>
+                <span class="comment-form__comment-submit">
+                    <button class="btn btn-outline-warning" type="submit" form="commentform">submit</button>
+                    <button class="btn btn-outline-warning d-none">cancel</button>
+                </span>
+            </form>
+        {{else}}
+            <div class="comment-area__user-alert">
+                <h1 class="lead"><a href="/auth/register">Register</a> or <a href="/auth/signin">sign in</a> now to
+                    comment on this movie!</h1>
+            </div>
+        {{/if}}
+        <div class="comment-area__comments-container">
+            <ul class="nested-comments">
+                <!--<li class="comment-chain">-->
+                <!--<div class="comment-chain__comment">-->
+                <!--<h5></h5>-->
+                <!--<p></p>-->
+                <!--<a href=""></a>-->
+                <!--</div>-->
+                <!--<ul class="comments-container__nested-comments"></ul>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+</div>

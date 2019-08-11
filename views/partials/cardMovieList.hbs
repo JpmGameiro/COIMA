@@ -1,0 +1,59 @@
+<div id="list-{{id}}" class="col-lg-3">
+    <div id="listItem" class="card bg-dark">
+        <div class="userListsOfMovies" id="txtAlignCenter">
+            <h3 id="listName-{{id}}">
+                <a class="card-title" href="/users/{{owner}}/lists/{{../id}}">
+                    <span id="themeColor">{{listName}}</span>
+                </a>
+            </h3>
+            <h5 class="card-subtitle mb-2 text-muted">{{items.length}} items</h5>
+            <h5 class="card-subtitle mb-2 text-muted">{{owner}}'s list</h5>
+
+            <div id="itemsList-{{id}}">
+                {{#checkUserList username listProtection owner}}
+                    {{#if isMine}}
+                        <button id="editListBtn-{{../id}}" class="editListBtn" onclick="showELPopUp('{{../id}}')">
+                            <span class="fa fa-pencil-square-o"></span>
+                        </button>
+                        <button id="removeListBtn-{{../id}}" class="removeListBtn"
+                                onclick="removeList('{{../id}}', '{{../owner}}')">
+                            <span class="fa fa-trash-o"></span>
+                        </button>
+                        {{#if private}}
+                            <button id="inviteUserBtn-{{../id}}" class="inviteUser" onclick="showIUPopUp('{{../id}}')">
+                                <span class="fa fa-user-plus"></span>
+                            </button>
+                        {{/if}}
+                    {{/if}}
+                {{/checkUserList}}
+            </div>
+        </div>
+    </div>
+
+    <div id="editListPopUp-{{id}}" style="visibility: hidden">
+        <h4>Edit List <span class="fa fa-times-circle" onclick="hideELPopUp('{{id}}')"></span></h4>
+        <input id="name-{{id}}" name="name" placeholder="Name" type="text" required>
+        <input id="description-{{id}}" name="description" placeholder="Description" type="text">
+        <label class="lead">You can make this list: </label>
+        <div id="divProtection-{{id}}">
+            {{#checkUserList username listProtection owner}}
+                {{#if private}}
+                    <label id="protection-{{../id}}" class="checkbox"><input type="checkbox" id="optionEdit-{{../id}}"
+                                                                             value="public">Public</label>
+                {{else}}
+                    <label id="protection-{{../id}}" class="checkbox"><input type="checkbox" id="optionEdit-{{../id}}"
+                                                                             value="private">Private</label>
+                {{/if}}
+            {{/checkUserList}}
+        </div>
+        <button onclick="editList('{{id}}','{{owner}}')">Submit</button>
+    </div>
+
+    <div id="inviteUserPopUp-{{id}}" style="visibility: hidden">
+        <h4>Invite User <span class="fa fa-times-circle" onclick="hideIUPopUp('{{id}}')"></span></h4>
+        <input id="guestUsername-{{id}}" name="guestUsername" placeholder="Username" type="text" required>
+        <label class="lead">Give Permission To Edit List:</label>
+        <label class="checkbox"><input type="checkbox" id="optionInvite-{{id}}" value="edit"></label>
+        <button onclick="inviteUser('{{id}}','{{owner}}')">Submit</button>
+    </div>
+</div>

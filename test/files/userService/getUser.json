@@ -1,0 +1,17 @@
+{
+  "res": {
+    "statusCode": 200
+  },
+  "body": {
+    "_id": "zemanel",
+    "_rev": "123123",
+    "email": "zemanel@gmail.com",
+    "fullName": "Ze Manel",
+    "username": "zemanel",
+    "password": "123",
+    "lists": [
+      "12345",
+      "6789"
+    ]
+  }
+}

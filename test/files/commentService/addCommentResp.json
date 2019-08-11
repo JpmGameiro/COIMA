@@ -1,0 +1,10 @@
+{
+  "res": {
+    "statusCode": 201
+  },
+  "body": {
+    "ok": true,
+    "id": "324786",
+    "rev": "1-4b9513fef19adedf553b4dc7a6b30108"
+  }
+}

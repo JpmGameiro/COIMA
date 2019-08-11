@@ -1,0 +1,41 @@
+{
+  "res": {
+    "statusCode": 200
+  },
+  "body": {
+    "rows": [
+      {
+        "doc": {
+          "items": {},
+          "listName": "Seen",
+          "_id": "4a5cd144a1789249096663c6f000196d"
+        },
+        "id": "4a5cd144a1789249096663c6f000196d",
+        "key": "4a5cd144a1789249096663c6f000196d",
+        "value": {
+          "rev": "4-b3ac14caa5f27095d02636d6381118fb"
+        }
+      },
+      {
+        "doc": {
+          "items": [
+            {
+              "movieId": "348",
+              "moviePoster": "/uJ842iV9vYfV0JbzGW54eqhftVM.jpg",
+              "movieRating": "7.9"
+            }
+          ],
+          "listName": "To See",
+          "_id": "4a5cd144a1789249096663c6f00020a4"
+        },
+        "id": "4a5cd144a1789249096663c6f00020a4",
+        "key": "4a5cd144a1789249096663c6f00020a4",
+        "value": {
+          "rev": "2-356ad6b6f44ae695c47ecba3b2f774bc"
+        }
+      }
+    ],
+    "total_rows": 2,
+    "offset": 0
+  }
+}

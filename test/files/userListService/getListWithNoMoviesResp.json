@@ -1,0 +1,13 @@
+{
+  "res": {
+    "statusCode": 200
+  },
+  "body": {
+    "_id": "123",
+    "_rev": "123123",
+    "listName": "Italian Movies",
+    "listDesc": "The best out there",
+    "owner": "nuno",
+    "items": []
+  }
+}
